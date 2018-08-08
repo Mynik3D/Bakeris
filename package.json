@@ -1,0 +1,33 @@
+{
+  "name": "bakeris",
+  "version": "1.0.0",
+  "description": "bakery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mynik3D/Bakeris.git"
+  },
+  "keywords": [
+    "bakery"
+  ],
+  "author": "MOI_NIK_3D",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mynik3D/Bakeris/issues"
+  },
+  "homepage": "https://github.com/Mynik3D/Bakeris#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-myth": "^1.1.0",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {}
+}

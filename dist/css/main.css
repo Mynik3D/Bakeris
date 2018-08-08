@@ -1,0 +1,24 @@
+body {
+  color: #000;
+  background: #fff;
+}
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+.site-header {
+  min-height: 900px;
+  height: 100vh;
+}
+.header-wrap {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}

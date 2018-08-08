@@ -1,0 +1,13 @@
+@font-face {
+  font-family: '﻿Scriptina';
+  src: url("../fonts/SCRIPTIN.eot");
+  src: url("../fonts/SCRIPTIN.eot?#iefix") format('embedded-opentype'), url("../fonts/SCRIPTIN.woff") format('woff'), url("../fonts/SCRIPTIN.ttf") format('truetype'), url("../fonts/SCRIPTIN.svg#﻿Scriptina") format('svg');
+  font-weight: 'normal';
+  font-style: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: '﻿Scriptina';
+    src: url("../fonts/SCRIPTIN.svg#﻿Scriptina") format('svg');
+  }
+}
