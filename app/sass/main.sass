@@ -1,0 +1,145 @@
+@import "fonts"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+
+	overflow-x: hidden
+
+	&__is-home
+	.site-header
+			   height: 100vh;
+			   min-height: 900px;
+
+
+.container
+	      width: 1280px
+	      margin: 0 auto;
+	   
+
+
+
+
+.header-wrap
+	 	   display: -webkit-flex
+	 	   display: -moz-flex
+	 	   display: -ms-flex
+	 	   display: -o-flex
+	 	   display: flex
+	 	   justify-content: space-between
+
+	
+
+
+
+
+
+
+.logo
+	a
+	  color: $default-color
+
+
+
+
+.navigation
+	       ul
+	       	 display: -webkit-flex
+	       	 display: -moz-flex
+	       	 display: -ms-flex
+	       	 display: -o-flex
+	       	 display: flex
+	       	 flex-direction: row
+	       	 flex-wrap: wrap
+
+								li
+									list-style-type: none
+									margin: 0 40px
+
+									
+
+								a
+									color: $default-color
+									text-decoration: none
+
+			
+
+
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header
+	  position: relative;
+	  background-size: cover;
+	  background-position: center;
+
+
+
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: 
+	color: #fff
+
+@import "media" // Всегда в конце

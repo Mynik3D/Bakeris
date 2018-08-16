@@ -1,25 +1,26 @@
-var gulp = require('gulp'), // Сообственно Gulp JS
-    stylus = require('gulp-stylus'), // Плагин для Stylus
+var gulp        = require('gulp'), // Сообственно Gulp JS
+    sass        = require('gulp-sass'), // Плагин для Stylus
     browserSync = require('browser-sync'),
-    myth = require('gulp-myth'), // Плагин для Myth - http://www.myth.io/
-    csso = require('gulp-csso'), // Минификация CSS
-    imagemin = require('gulp-imagemin'), // Минификация изображений
-    uglify = require('gulp-uglify'), // Минификация JS
-    concat = require('gulp-concat'); // Склейка файлов
+    myth        = require('gulp-myth'), // Плагин для Myth - http://www.myth.io/
+    csso        = require('gulp-csso'), // Минификация CSS
+    imagemin    = require('gulp-imagemin'),
+    pngquant    = require('imagemin-pngquant'),
+    uglify      = require('gulp-uglify'), // Минификация JS
+    concat      = require('gulp-concat'); // Склейка файлов
+    autoprefixer        = require('gulp-autoprefixer');
 
  
 
 
          
          // Собираем Stylus
-gulp.task('stylus', function() {
-   return gulp.src('app/stylus/**/*.styl')
-        .pipe(stylus())
-
-    .pipe(gulp.dest('app/css')) // записываем css
+gulp.task('sass', function() {
+    return gulp.src('app/sass/**/*.sass')
+    .pipe(sass())
+    .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
+    .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({stream: true}))
 });
-
 
  
 
@@ -35,13 +36,16 @@ gulp.task('js', function() {
 
 // Копируем и минимизируем изображения
 
-gulp.task('images', function() {
-    gulp.src('app/img/**/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'))
-
+gulp.task('img', function() {
+    return gulp.src('app/img/**/*')
+    .pipe(cache(imagemin({
+        interlaced: true,
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant()]
+    })))
+    .pipe(gulp.dest('dist/img'));
 });
-
 gulp.task('browser-sync', function() {
         browserSync({
             server: {
@@ -54,13 +58,12 @@ gulp.task('browser-sync', function() {
 
 
 
-// Запуск сервера разработки gulp watch
-gulp.task('watch',['browser-sync', ], function() {
-         gulp.watch('app/stylus/**/*.styl',['stylus']);
-         gulp.watch('app/*.html',browserSync.reload);
-         gulp.watch('app/js/**/*.js', browserSync.reload);
-    });
-  
+
+  gulp.task('watch', ['browser-sync'], function() {
+    gulp.watch('app/sass/**/*.sass', ['sass']);
+    gulp.watch('app/*.html', browserSync.reload);
+    gulp.watch('app/js/**/*.js', browserSync.reload);
+});
 
 
 
@@ -78,7 +81,7 @@ gulp.task('watch',['browser-sync', ], function() {
 
 // Сборка проекта
 
-gulp.task('build',['images', 'stylus','js'], function() {
+gulp.task('build',['img', 'sass','js'], function() {
   var buildCss = gulp.src(['app/css/main.css'
     ])
     .pipe(gulp.dest('dist/css')) // записываем css
