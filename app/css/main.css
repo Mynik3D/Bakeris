@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "ProximaNova";
   font-weight: normal;
@@ -11,6 +12,20 @@
   font-style: normal;
   src: url("../fonts/SCRIPTIN.eot");
   src: url("../fonts/SCRIPTIN.eot?#iefix") format("embedded-opentype"), url("../fonts/SCRIPTIN.woff") format("woff"), url("../fonts/SCRIPTIN.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Alegreya";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Alegreya-Regular.eot");
+  src: url("../fonts/Alegreya-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Alegreya-Regular.woff") format("woff"), url("../fonts/Alegreya-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "MyriadPro";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/MyriadPro-Regular.eot");
+  src: url("../fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro-Regular.woff") format("woff"), url("../fonts/MyriadPro-Regular.ttf") format("truetype"); }
 
 * {
   -webkit-box-sizing: border-box;
@@ -61,6 +76,9 @@ body {
   margin: 0 auto; }
 
 .header-wrap {
+  background: rgba(86, 83, 76, 0.72); }
+
+.header-sl {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -99,7 +117,22 @@ body {
 
 .navigation a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none;
+  font-family: Alegreya, "﻿MyriadPro";
+  font-size: 14pt;
+  text-transform: uppercase; }
+
+.social-icons ul {
+  display: -webkit-flex;
+    display-display: -moz-flex;
+    display-display: -ms-flex;
+    display-display: -o-flex;
+    display-display: flex;
+    display-flex-direction: row;
+    display-flex-wrap: wrap; }
+  .social-icons ul li {
+    list-style-type: none;
+    margin: 0 25px; }
 
 header {
   position: relative;
