@@ -41,22 +41,24 @@ body
 	min-width: 320px
 	position: relative
 	line-height: 1.65
-
+	margin: 0
 	overflow-x: hidden
 
 	&__is-home
 	.site-header
 			   height: 100vh;
 			   min-height: 900px;
+			   background-repeat: no-repeat
 
 
 .container
-	      width: 1280px
+	      width: 1260px
 	      margin: 0 auto;
 	   
 
-.header-wrap
+.b-header__wrap
 			background: rgba(86,83,76,0.72)
+			height: 70px;
 
 
 
@@ -78,6 +80,7 @@ body
 	 	   display: -o-flex
 	 	   display: flex
 	 	   justify-content: space-between
+	 	   align-items: center;
 
 	
 
@@ -87,6 +90,7 @@ body
 
 
 .logo
+	padding-top: 18px;
 	a
 	  color: $default-color
 
@@ -115,6 +119,7 @@ body
 									font-family: Alegreya,$default-Myriad;
 									font-size: $small-size
 									text-transform: uppercase
+									letter-spacing: 4px;
 
 
 
@@ -135,11 +140,75 @@ body
               list-style-type: none
               margin: 0 25px
 
-	   		   					
-				   		   			  
+
+	   		   			 
+.b-header__banner
+	display: flex
+	height: 100%
+	position: relative
+	bottom: 115px
+
+	&__inner
+			margin: auto
+    
 
 
-	    
+ &__text
+		text-align: center
+		position: relative
+
+		h1
+			font-family: $b-header-h1,$default-Myriad
+			font-size: 92px
+			color: $default-color
+			margin: 0
+			letter-spacing: 5px;
+
+		p
+			font-family: $default-font,$default-Myriad
+			font-size: 24pt
+			color: $default-color
+
+		.button
+			display: inline-block
+			border: none
+			color: #fff
+			text-decoration: none
+			background-color: $header-opacity
+			padding: 15px 45px
+			font-size: $small-size
+			text-transform: uppercase
+			font-weight: 600
+			letter-spacing: 3px
+			border-radius: 2px
+			text-align: center
+			position: relative
+			outline: none
+			transition: background-color .1s ease
+			cursor: pointer
+			&::after
+				transition: background-color .2s ease
+				position: absolute
+				content: ''
+				height: 4px
+				bottom: 0
+				width: 100%
+				background-color: darken($header-opacity, 50%)
+				opacity: .18
+				border-bottom-left-radius: 2px
+				border-bottom-right-radius: 2px
+				left: 0
+			&:focus, &:hover
+				text-decoration: none
+				color: #fff
+			&:hover
+				background-color: lighten($header-opacity, 5%)
+				&::after
+					opacity: .22
+			&:active
+				background-color: darken($header-opacity, 5%)
+				&::after
+					opacity: .32
 
 
 
@@ -157,10 +226,9 @@ body
 
 
 
-header
-	  position: relative;
-	  background-size: cover;
-	  background-position: center;
+
+
+
 
 
 

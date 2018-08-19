@@ -27,6 +27,13 @@
   src: url("../fonts/MyriadPro-Regular.eot");
   src: url("../fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro-Regular.woff") format("woff"), url("../fonts/MyriadPro-Regular.ttf") format("truetype"); }
 
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/PlayfairDisplay-Bold.eot");
+  src: url("../fonts/PlayfairDisplay-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff"), url("../fonts/PlayfairDisplay-Bold.ttf") format("truetype"); }
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -66,17 +73,20 @@ body {
   min-width: 320px;
   position: relative;
   line-height: 1.65;
+  margin: 0;
   overflow-x: hidden; }
   body .site-header {
     height: 100vh;
-    min-height: 900px; }
+    min-height: 900px;
+    background-repeat: no-repeat; }
 
 .container {
-  width: 1280px;
+  width: 1260px;
   margin: 0 auto; }
 
-.header-wrap {
-  background: rgba(86, 83, 76, 0.72); }
+.b-header__wrap {
+  background: rgba(86, 83, 76, 0.72);
+  height: 70px; }
 
 .header-sl {
   display: -webkit-flex;
@@ -89,10 +99,16 @@ body {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
-.logo a {
-  color: white; }
+.logo {
+  padding-top: 18px; }
+  .logo a {
+    color: white; }
 
 .navigation ul {
   display: -webkit-flex;
@@ -119,8 +135,9 @@ body {
   color: white;
   text-decoration: none;
   font-family: Alegreya, "﻿MyriadPro";
-  font-size: 14pt;
-  text-transform: uppercase; }
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px; }
 
 .social-icons ul {
   display: -webkit-flex;
@@ -134,11 +151,82 @@ body {
     list-style-type: none;
     margin: 0 25px; }
 
-header {
-  position: relative;
-  -webkit-background-size: cover;
-          background-size: cover;
-  background-position: center; }
+.b-header__banner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%; }
+  .b-header__banner__inner {
+    margin: auto;
+    height: 100%;
+    background-image: url(../img/bg-hadow.svg);
+    background-position: 108px -125px;
+    background-repeat: no-repeat;
+    -webkit-background-size: 75% 75%;
+            background-size: 75%; }
+  .b-header__banner__text {
+    text-align: center;
+    position: relative;
+    top: 170px; }
+    .b-header__banner__text h1 {
+      font-family: "﻿MyriadPro";
+      font-size: 92px;
+      color: white;
+      margin: 0;
+      letter-spacing: 5px; }
+    .b-header__banner__text p {
+      font-family: "﻿ProximaNova";
+      font-size: 24pt;
+      color: white;
+      margin-top: 104px; }
+    .b-header__banner__text .button {
+      display: inline-block;
+      border: none;
+      color: #fff;
+      text-decoration: none;
+      background-color: rgba(86, 83, 76, 0.6);
+      padding: 15px 45px;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 3px;
+      -webkit-border-radius: 2px;
+              border-radius: 2px;
+      text-align: center;
+      position: relative;
+      outline: none;
+      -webkit-transition: background-color .1s ease;
+      -o-transition: background-color .1s ease;
+      transition: background-color .1s ease;
+      cursor: pointer; }
+      .b-header__banner__text .button::after {
+        -webkit-transition: background-color .2s ease;
+        -o-transition: background-color .2s ease;
+        transition: background-color .2s ease;
+        position: absolute;
+        content: '';
+        height: 4px;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        opacity: .18;
+        -webkit-border-bottom-left-radius: 2px;
+                border-bottom-left-radius: 2px;
+        -webkit-border-bottom-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+        left: 0; }
+      .b-header__banner__text .button:focus, .b-header__banner__text .button:hover {
+        text-decoration: none;
+        color: #fff; }
+      .b-header__banner__text .button:hover {
+        background-color: rgba(100, 96, 88, 0.6); }
+        .b-header__banner__text .button:hover::after {
+          opacity: .22; }
+      .b-header__banner__text .button:active {
+        background-color: rgba(72, 70, 64, 0.6); }
+        .b-header__banner__text .button:active::after {
+          opacity: .32; }
 
 .img-responsive {
   display: block;
